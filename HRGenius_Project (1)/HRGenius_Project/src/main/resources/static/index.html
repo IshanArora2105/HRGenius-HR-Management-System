@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b4e">
+  <title>HRGenius | Human Resource Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+  <section id="authScreen" class="auth-screen">
+    <div class="auth-art">
+      <div class="brand brand-light"><span class="brand-mark">H</span><span>HR<span class="brand-accent">Genius</span></span></div>
+      <div class="auth-art-copy"><span class="eyebrow">PEOPLE • PROCESS • PERFORMANCE</span><h1>Make work<br>work better.</h1><p>A connected workspace for your people operations, from first application to career growth.</p></div>
+      <div class="auth-art-footer"><span>HR Management System</span><span>01 / 06</span></div>
+    </div>
+    <div class="auth-panel-wrap">
+      <div class="auth-panel">
+        <div class="auth-mobile-brand brand"><span class="brand-mark">H</span><span>HR<span class="brand-accent">Genius</span></span></div>
+        <div id="loginPane">
+          <span class="eyebrow">WELCOME BACK</span><h2>Sign in to your workspace</h2><p class="muted">Enter your account details to continue.</p>
+          <form id="loginForm" class="stack-form">
+            <label>Email or username<input name="username" autocomplete="username" placeholder="you@company.com" required></label>
+            <label>Password<input name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required></label>
+            <button class="btn btn-primary btn-wide" type="submit">Sign in <span>→</span></button>
+            <p class="form-error" id="loginError" role="alert"></p>
+          </form>
+          <p class="auth-switch">Applying for a role? <button class="text-button" type="button" data-auth="register">Create a candidate account</button></p><p class="auth-switch"><button class="text-button" type="button" id="browsePublicJobs">Browse public job openings</button></p>
+        </div>
+        <div id="registerPane" hidden>
+          <span class="eyebrow">JOIN OUR TALENT COMMUNITY</span><h2>Create candidate account</h2><p class="muted">Register to apply for open positions and track your applications.</p>
+          <form id="candidateRegisterForm" class="stack-form">
+            <label>Full name<input name="name" autocomplete="name" required maxlength="120"></label>
+            <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+            <label>Phone<input name="phone" autocomplete="tel" required></label>
+            <label>Password<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+            <button class="btn btn-primary btn-wide" type="submit">Create account <span>→</span></button>
+            <p class="form-error" id="registerError" role="alert"></p>
+          </form>
+          <p class="auth-switch">Already registered? <button class="text-button" type="button" data-auth="login">Sign in</button></p>
+        </div>
+      </div>
+      <div class="auth-legal">© HRGenius · Secure people operations</div>
+    </div>
+  </section>
+
+  <div id="appShell" class="app-shell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="brand sidebar-brand"><span class="brand-mark">H</span><span>HR<span class="brand-accent">Genius</span></span></div>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav id="sideNav" class="side-nav" aria-label="Main navigation"></nav>
+      <div class="sidebar-bottom"><div class="help-card"><span class="help-icon">✦</span><strong>Need a hand?</strong><small>Contact your HR administrator for access and support.</small></div><button id="logoutBtn" class="logout-button"><span>↪</span> Sign out</button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button id="mobileMenu" class="icon-button mobile-menu" aria-label="Toggle menu">☰</button><div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="pageCrumb">Overview</strong></div><div class="topbar-right"><span class="topbar-date" id="todayLabel"></span><div class="user-chip"><span class="avatar" id="userAvatar">U</span><span><strong id="userName">User</strong><small id="userRole">ROLE</small></span></div></div></header>
+      <div class="page-wrap"><div id="pageContent" aria-live="polite"></div></div>
+      <footer class="app-footer"><span>HRGenius HRMS</span><span>People operations, made clear.</span></footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
